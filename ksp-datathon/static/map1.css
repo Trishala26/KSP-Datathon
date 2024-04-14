@@ -1,0 +1,149 @@
+.center {
+  display: flex;
+}
+form {
+  display: flex;
+  flex-direction: row;
+}
+img {
+  width: 530px; /* Set the desired width for the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+#detail {
+  margin-left: 400px; /* Adjust the distance between the image and the form */
+}
+.show {
+  display: inline-block ;
+}
+.district-text {
+  font-size: 60px !important;
+  margin-left: 10px; /* Adjust the negative margin to move the h4 element to the left */
+}
+#submitButton {
+  margin-right: 350px; 
+  margin-top: 20px; 
+  padding: 10px 30px; /* Increase padding to make the button larger */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer;
+  background-color: #edf3ed;
+  font-size: 18px; /* Increase font size */
+  font-weight: bold;
+   /* Set the background color */
+  /* Adjust the amount of space above the button */
+  /* Move the button to the left */
+}
+#submitButton:hover {
+  background-color: #60f7f0; /* Darken the background color on hover */
+}
+
+
+h4 {
+    
+    color:red;
+    font-size: 8em;
+    transition: 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4:hover {
+    text-shadow: 0 1px 0 purple, 0 2px 0  purple,
+        0 3px 0 purple, 0 4px 0 purple,
+        0 5px 0 purple, 0 6px 0 purple,
+        0 7px 0 purple, 0 8px 0 purple,
+        0 9px 0 purple, 0 10px 0 purple,
+        0 11px 0 purple, 0 12px 0 purple,
+        0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.hide {
+  display: none;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100%;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 35px;
+  border-radius: 5px;
+  /* Adjust the font size of the select elements */
+  /* Adjust the space between the select elements */
+}
+.inputs select {
+  font-size: 45px; /* Adjust the font size of the select elements */
+  padding: 8px; /* Adjust the padding to increase the size of the select box */
+  height: 40px;
+  font-weight: bold; 
+  border-radius: 5px;
+  /* Adjust the height to increase the size of the select box */
+}
+.logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px; /* Adjust the margin as needed */
+}
+
+.logo img {
+  width: 320px; /* Set the desired width for the image */
+  height: auto; /* Maintain aspect ratio */
+}
+#village,
+#year {
+  font-size: 16px; /* Adjust the font size as needed */
+}
+#village:hover option,
+#year:hover option {
+  background-color:black ; /* Change the background color on hover */
+  color:white; /* Change the text color on hover */
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.right {
+  right: 0;
+  left: 50%;
+  
+  position: fixed;
+  height: 100%;
+  z-index: -1; /* Move the background behind other content */
+}
+
+
+/* .left {
+  left: 0;
+  background-color: #111;
+} */
+
+/* .right {
+  right: 0;
+  background-color: red;
+} */
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 50px;
+  border-radius: 50%;
+}

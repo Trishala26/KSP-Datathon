@@ -1,0 +1,76 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-image: url("./static/res.avif");
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            color: #eb0808;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width:1200px;
+            margin-left: 200px;
+            border-collapse: collapse;
+            background-color: rgba(286, 236, 236, 0.3); /* Adjust the alpha (opacity) value */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 20px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:rgb(4, 4, 16);
+        }
+
+        th {
+            background-color: #32e4f4;
+        }
+
+        tr:hover {
+            background-color: #ee9a09;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Person Name</th>
+                <th>Age</th>
+                <th>Caste</th>
+                <th>Sex</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for accused in accused_data %}
+            <tr>
+                <td>{{ accused['Person_Name'] }}</td>
+                <td>{{ accused['age'] }}</td>
+                <td>{{ accused['Caste'] }}</td>
+                <td>{{ accused['Sex'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

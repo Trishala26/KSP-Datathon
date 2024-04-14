@@ -1,0 +1,162 @@
+<!-- prediction.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- <link rel="stylesheet" href="prediction.css"> -->
+    
+    
+</head>
+<body>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+
+
+
+    background: rgb(29,52,218);
+background: linear-gradient(90deg, rgba(29,52,218,0.6644782913165266) 25%, rgba(218,9,24,0.6644782913165266) 56%, rgba(179,18,64,1) 85%);
+}
+h1{
+    color:rgb(250, 232, 43);
+    font-size: 40px;
+    font-weight: bold;
+}
+p{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+
+    
+}
+/* Css Is Cool */
+.police {
+  background: url(http://pluspng.com/img-png/police-hd-png-best-police-car-clip-art-image-file-free-4160.png)
+    top center no-repeat;
+  background-size: 100% 100%;
+  height: 400px;
+  width: 400px;
+  padding-left: 120px;
+  padding-top: 7.5px;
+  float: left; /* Add this line */
+}
+
+.cap-1 {
+  float: left;
+  background: red;
+  box-shadow: inset 0 0 10px red;
+  width: 104px;
+  height: 25px;
+  border-radius: 0px 15px 15px 0px;
+  animation: capone 2ms infinite;
+}
+@keyframes capone {
+  1% {
+    background: transparent;
+    box-shadow: 0 0 50px red;
+  }
+  50% {
+    background: red;
+    box-shadow: 0 0 50px transparent;
+  }
+  100% {
+    background: transparent;
+    box-shadow: 0 0 50px red;
+  }
+}
+.cap-2 {
+  float: left;
+  background: grey;
+  /* 			opacity: 0.9; */
+  width: 70px;
+  height: 25px;
+  border-radius: 0px 0px 0px 0px;
+}
+.cap-3 {
+  float: left;
+  background: blue;
+  width: 104px;
+  box-shadow: inset 0 0 10px blue;
+  height: 25px;
+  border-radius: 15px 0px 0px 15px;
+  animation: capthree 2ms infinite;
+}
+@keyframes capthree {
+  1% {
+    background: transparent;
+    box-shadow: 0 0 50px blue;
+  }
+  50% {
+    background: blue;
+    box-shadow: 0 0 50px transparent;
+  }
+  100% {
+    background: transparent;
+    box-shadow: 0 0 50px blue;
+  }
+}
+#accusedbutton{
+  margin-left: 350px; 
+/* Adjust the distance from the left */
+  margin-top: 20px; 
+  padding: 20px 40px; /* Increase padding to make the button larger */
+  border-radius: 25px; /* Add rounded corners */
+  cursor: pointer;  
+  background-color: #87f0fa;
+  font-size: 25px; /* Increase font size */
+  font-weight: bold;
+   /* Set the background color */
+  /* Adjust the amount of space above the button */
+  /* Move the button to the left */
+}
+#accusedbutton:hover {
+  background-color: #60f7f0; /* Darken the background color on hover */
+}
+
+
+
+    </style>
+    <div class="police">
+        <div class="tab">
+          <div class="cap-3"></div>
+          <div class="cap-2"></div>
+          <div class="cap-1"></div>
+        </div>
+      </div>
+    <!-- <img src="arrested.png" -->
+    <!-- <img src="./static/crime2.jpeg" alt="Logo" style="width: 50px; height: 50px; position: absolute; top: 10px; left: 10px;"> -->
+    <!-- <img src="./static/crime3.jpeg" alt="Logo" style="width: 50px; height: 50px;position: absolute; top: 10px; right: 10px;"> -->
+    
+    <form action="/search" method="POST">
+      <h1>PREDICTION RESULT</h1>
+      
+      <p>
+          The predicted total number of crimes for <strong>{{ location.upper() }}</strong> in the year <strong>{{ year }}</strong> is: <span id="prediction">{{ prediction }}</span>.
+      </p>    
+  
+      <!-- Display warning image if the predicted total crimes exceed 100 -->
+      {% if warning_image %}
+          <img src="/static/WARNING.webp" alt="Warning" style="width: 100px; height: 100px;">
+          <p style="color: red;">WARNING: The predicted total crimes exceed 100. Please be cautious!</p>
+      {% endif %}
+  
+      <!-- Hidden input fields for location and year -->
+      <input type="hidden" name="location" value="{{ location }}">
+      <input type="hidden" name="year" value="{{ year }}">
+  
+      <!-- Button to view accused list -->
+      <input type="submit" value="View Accused List" id="accusedbutton" />
+  </form>
+  
+    <!-- <script src ="prediction.js"></script> -->
+</body>
+</html>
+
+
+
